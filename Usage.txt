@@ -1,0 +1,62 @@
+The VMD plugin can help you construct models with specific molecular fragments and generate input files for subsequent NAMD simulations 
+
+1) Start VMD and open the Tk Console by selecting Extensions -> Tk Console.
+
+
+2) Open the plugin window (Fig. S1) by entering the following:
+
+   >>  cd /your-working-directory/VMD-plugin   >>  source  ./multirestraints.tcl   >>  multirestraints_tk3) In the "Input" section, you will be asked to load the psf and pdb files for your model system (a complete model including protein, lipids, water, ions, et al.), type in the output prefix and choose the topology (CHARMM27 or CHARMM36).4) In the “Metal/Salt Bridges” and “Spin Labels” sections, you can choose the molecular restraints you want to apply to the model.
+
+    4.1) Click the box before the restraint serial number (MR: X).
+    4.2) Choose the restraint type. Currently, “Metal/Salt Bridges” includes 9 residues (CYS(-1), HISND(-1), HISNE(-1), GLU, ASP, ARG, LYS, TRP and CYS) and 3 ions (Cd2+, Mg2+ and Zn2+), do not select any ions when you want to add a salt bridge. “Spin Labels” includes two spin labels MTSSL and ONDUM.
+    4.3) Type in the “segid” and “resid” for the target residues, e.g. SegID_i: A, ResID_i: 39, SegID_j: A, ResID_j: 59 or SegID_i: A, ResID_i {39 45}, SegID_j: A, ResID_j: {59 65}. In the second case, two restraints will be applied to two residue pairs (39, 59) and (45, 65), respectively.    4.4) Type in the number of copies or replica for the patched spin labels under "RepNum” (if needed, default value is 1).5) Click "Run MultiRestraints" at the bottom of the window to run the plugin. The output files will be found in your current directory. Five files will be generated. 
+
+Exemplary output files are available in ./example-output/ (test.psf, test.pdb, test_exclu.psf, test-dummy.pdb and test-extrabonds.dat)
+In which, (1) test.psf, (2) test.pdb, (3) test_exclu.psf are the psf and pdb files of the model with molecular fragments, and the exclusion lists are include in test_exclu.psf (default structure file for NAMD simulations). 
+(4) test-dummy.pdb is the pdbfile used to define the dummy fragments by beta values: atoms in the same fragment have the same beta values (>0), and different fragments have different beta values.
+(5) test-extrabonds.dat is the file including extrabonds restraints information used to restrain the conformation of the salt/metal ion bridges.
+
+
+The following flags should be included in the configuration file to run NAMD simulations with dummy fragments:
+
+//
+
+structure	   test_exclu.psf
+coordinates	   test.pdb
+
+…
+
+maxExclusionFlags  100000
+
+…
+
+dummySite          on
+dummySiteFile      test-dummy.pdb 
+dummySiteDelta     1
+
+…
+
+extraBonds         on
+extraBondsFile     test-extrabonds.dat
+
+…
+
+//
+
+
+To apply distance histogram restraints in the mean-field restrained-ensemble simulations using the colvars module of NAMD
+
+The following flags should be included
+
+//
+
+dummySiteScale    0.04 ; # (1/N, N is the number of copies of a given molecular fragment)
+
+…
+
+colvars           on
+colvarsConfig     Restraints-DEER.in
+   
+//
+
+
