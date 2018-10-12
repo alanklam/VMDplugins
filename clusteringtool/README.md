@@ -16,7 +16,7 @@ Features inherent from previous version:
 * Custom representations
 * Join single member clusters in a separate cluster
 
-![VMD screen shot](VMD.png | width=480)
+![VMD screen shot](VMD.png) {:height="50%" width="50%"}
 
 **Disclaimer**
 This tool was mainly built on top of the previous version developed by Luis Gracia (https://github.com/luisico) at Weill Cornell Medical College, but with new features added by me to faciliate the use.
