@@ -1,125 +1,70 @@
-Clustering
+VMD Clustering Tool
 =====
 
-**Clustering** is a VMD plugin to calculate and visualize clusters of conformations for a trajectory. Each conformation is color coded according to the cluster to which it belongs. This is done by creating one representation for each cluster, and setting variable *Draw Multiple frames* to the corresponding frame numbers.
+**VMD Clustering Tool** is a user-friendly clustering analysis plugin for Visual Molecular Dynamics (VMD). It allows user to analyze molecular dynamics (MD) trajectories or pdb structure files in an interactive way.
 
-> Website: http://physiology.med.cornell.edu/faculty/hweinstein/vmdplugins/clustering
+NEW Features:
+* Represent cluster conformations with different representation options (default: Licorice)
+* Selection of clusters and/or conformations to display on top of any existing presentations
+* Easy switch between displaying all conformations or just the cluster centroid conformation
 
-Features include:
-
+Features inherent from previous version:
 * Compute clusters using VMD's internal [measure cluster](http://www.ks.uiuc.edu/Research/vmd/current/ug/node136.html) command
 * Import results from *R*, *Xcluster*, *Gromacs*, *Charmm*, *NMRCLUSTER*
 * Color conformations by cluster
-* Selection of clusters and/or conformations to display
 * Multiple levels of clustering
 * Custom representations
 * Join single member clusters in a separate cluster
 
-![Clustering Tool interface](clustering1.png?raw=true)
-![Clustering Tool example](clustering2.png?raw=true)
+![VMD screen shot](VMD.png?raw=true)
 
-## Installation
+**Disclaimer**
+This tool was mainly built on top of the previous version developed by Luis Gracia (https://github.com/luisico) at Weill Cornell Medical College, but with new features added by me to faciliate the use.
 
-A small guide on how to install third party VMD plugins can be found [here](http://physiology.med.cornell.edu/faculty/hweinstein/vmdplugins/installation.html). In summary:
+## Installation Guide
 
-1. Create a VMD plugins' directory if you don't have one, ie */path/to/plugins/directory*.
-2. Clone or download the project into a subdirectory of your *VMD plugins' directory* (ie. */path/to/plugins/directory/clustering*):
+1. Download and install VMD following the user guide here: https://www.ks.uiuc.edu/Research/vmd/
+2. Clone this project into your local path (e.g. */path/to/plugins/directory/clusteringtool*):
 ```sh
 cd /path/to/plugins/directory
-git clone https://github.com/luisico/clustering.git clustering
+git clone https://github.com/alanklam/VMDplugins/clusteringtool.git clusteringtool
 ```
 
-3. Add the following to your *$HOME/.vmdrc* file (if you followed the instructions in the link above, you might already have the first line present):
+3. Add the following to *$HOME/.vmdrc* file, create the file if you don't have one yet:
 ```tcl
 set auto_path [linsert $auto_path 0 {/path/to/plugins/directory}]
-vmd_install_extension clustering clustering "WMC PhysBio/Clustering"
+vmd_install_extension clusteringtool clustering "Analysis/Clustering\ Tool"
 ```
-The plugin should be accessible from the *Extensions* menu.
+This should add the plugin to your VMD, under the *Extensions->Analysis* menu.
 
-## Getting started
+## Example Usage
 
-To use the Clustering plugin you need to:
+An example use case (alanine dipeptide) is placed under the test/ folder.
 
-1. **Load a trajectory** of conformations used for clustering into VMD.
-2. Define the **atom selection** and molecule to use as representation in vmd.
-3. **Generate** the clusters with VMD's internal measure cluster command. More information about [measure cluster](http://www.ks.uiuc.edu/Research/vmd/current/ug/node136.html) can be found in VMD's manual. All options in Clustering's *Use measure cluster* section correspond to the options available to [measure cluster](http://www.ks.uiuc.edu/Research/vmd/current/ug/node136.html).
-4. **Import** results from a third party solution (see below)
-5. **Viewing** clusters:
-  * Select the **level** you want to see. The list of clusters will be updated together with colored conformations. All clusters will be displayed when you change the level.
-  * Select/Deselect **clusters** to activate/deactivate them.
-  * Select/Deselect **conformations** to activate/deactivate individual conformations.
-  * **All** and **None** turn on/off all clusters and conformations.
+![VMD Clustering Tool interface](clusteringtool1.png?raw=true)
+
+1. Load a trajectory into VMD.
+```tcl
+mol new test/A2.psf
+animate read dcd test/A2.dcd
+```
+2. Define the atom selection and molecule to analyze in in the plugin window, Mol:0, Selection: protein.
+3. Calculate the clustering results with VMD's internal measure cluster command. More information about [measure cluster](http://www.ks.uiuc.edu/Research/vmd/current/ug/node136.html) can be found in VMD's manual. You are adviced to read the manual carefully to make sure you understand the meaning of each parameter. 
+4. By default the plugin will show only the centroid conformations of each cluster, representations will be updated in the VMD window automatically.
+  * The **Keep non-cluster representations** option allows user to keep all previously created representation of the molecule unchanged. Deselect the option will erase all representations other than the clusters representations.
+  * Deselect **show centroid** to show all conformations in each cluster.
   * Activate **Join 1 member clusters** to display all single member clusters in a separate cluster (*outl*).
-  * The **atom selection** to represent can be changed in the atom selection box. Click *Update Selection* button to apply the changes.
+  * Select/Deselect **clusters**, **Confs**to show/hide a particular cluster or conformation.
+  * **All** and **None** turn on/off all clusters and conformations. 
+  * Whenever **Selection** or **Representations** is changed, click *Update Views* button to refresh the VMD window.
 
-## Third party importers
-
-### R
-
-Ref: [R](http://www.r-project.org) with [hierarchical clustering](http://cran.r-project.org/web/views/Cluster.html)
-
-First obtain the rmsd between structures. You can use [iTrajComp](http://physiology.med.cornell.edu/faculty/hweinstein/vmdplugins/itrajcomp) for an easy way of doing this (I suggest writing the results in matrix format).
-
-Load the data into R and use one of the available functions in R to do hierarchical clustering (*hclust*, *agnes*, *diana*, ...). If you used the [iTrajComp](http://physiology.med.cornell.edu/faculty/hweinstein/vmdplugins/itrajcomp) plugin to create the rmsd matrix, the following should work in R (see the documentation of the individual commands for further options):
-```R
-data = scan('/path/to/rmsd.mat')
-rmsd = matrix(data, nrow=sqrt(length(data)), ncol=sqrt(length(data)))
-library(cluster)
-cluster = agnes(rmsd, diss=T)
-```
-
-Cut the tree into groups (levels) using cutree. You can cut into one or more groupings. For example
-```R
-levels = cutree(cluster, k=2:5)
-```
-will output the cluster membership of each object for levels 2 to 5.
-
-Write results to a file to input into the Clustering plugin:
-```R
-write.table(levels, file='levels.dat', quote=F)
-```
-
-Import *levels.dat* into the *Clustering*.
-
-### Xcluster
-
-Ref: [Xcluster](http://www.schrodinger.com)
-
-Import Xcluster's *.clg* output file into *Clustering*. All levels of interest must be saved in order to display them in VMD (look in Xcluster's manual for the *Writecls* command).
-
-### Gromacs
-
-Ref: http://www.gromacs.org
-g_cluster: http://manual.gromacs.org/online/g_cluster.html
-
-Import the "cluster.log" file. Only a level (0) will be available. g_cluster timesteps are automatically mapped into VMD frames.
-
-### Charmm
-
-Ref: [Charmm](http://www.charmm.org) with the [clustering command](http://www.charmm.org/documentation/c35b1/correl.html#%20Cluster)
-
-Import the *output membership* file into *Clustering*.
-
-### NMRCLUSTER
-
-Ref: http://neon.chem.le.ac.uk/nmrclust (link has been down for some time)
-
-Import *Cluster.log* into *Clustering*. Only a level (0) will be available. Outliers will be splitted in different clusters. Check *Join 1 member clusters* to cluster them together.
+## About the inherent features
+Please visit Dr. Luis Gracia's page for more info of the old features, including importing clustering results from R and Gromacs etc.
+https://github.com/luisico/clustering
 
 ## Author
+Kin Lam (https://github.com/alanklam)
 
-Luis Gracia (https://github.com/luisico)
-
-Developed at Weill Cornell Medical College
-
-## Contributors
-
-Please, use issues and pull requests for feedback and contributions to this project.
-
-### Thanks
-
-Thanks to Andrea Carotti for all his help with testing the Gromacs importer.
 
 ## License
-
-See LICENSE.
+This plugin is redistributed under the terms specified in LICENSE.
