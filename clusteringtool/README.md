@@ -9,7 +9,7 @@ NEW Features:
 * Easy switch between displaying all conformations or just the cluster centroid conformation
 
 Features inherent from previous version:
-* Compute clusters using VMD's internal [measure cluster](http://www.ks.uiuc.edu/Research/vmd/current/ug/node136.html) command
+* Compute clusters using VMD's internal [measure cluster](https://www.ks.uiuc.edu/Research/vmd/current/ug/node138.html) command
 * Import results from *R*, *Xcluster*, *Gromacs*, *Charmm*, *NMRCLUSTER*
 * Color conformations by cluster
 * Multiple levels of clustering
