@@ -24,15 +24,15 @@ This tool was mainly built on top of the previous version developed by Luis Grac
 ## Installation Guide
 
 1. Download and install VMD following the user guide here: https://www.ks.uiuc.edu/Research/vmd/
-2. Clone this project into your local path (e.g. */path/to/plugins/directory/clusteringtool*):
+2. Clone this project into your local path (e.g. */path/to/plugins/directory/VMDplugins*):
 ```sh
 cd /path/to/plugins/directory
-git clone https://github.com/alanklam/VMDplugins/clusteringtool.git clusteringtool
+git clone https://github.com/alanklam/VMDplugins.git VMDplugins
 ```
 
 3. Add the following to *$HOME/.vmdrc* file, create the file if you don't have one yet:
 ```tcl
-set auto_path [linsert $auto_path 0 {/path/to/plugins/directory}]
+set auto_path [linsert $auto_path 0 {/path/to/plugins/directory/VMDplugins}]
 vmd_install_extension clusteringtool clustering "Analysis/Clustering\ Tool"
 ```
 This should add the plugin to your VMD, under the *Extensions->Analysis* menu.
