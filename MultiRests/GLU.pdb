@@ -1,0 +1,17 @@
+REMARK original generated coordinate pdb file
+ATOM      1  N   GLU G   1       1.610  -5.598   0.811  1.00  0.00      MR   N
+ATOM      2  HN  GLU G   1       0.815  -6.205   0.818  1.00  0.00      MR   H
+ATOM      3  CA  GLU G   1       1.152  -4.220   0.778  1.00  0.00      MR   C
+ATOM      4  HA  GLU G   1       1.271  -3.913  -0.254  1.00  0.00      MR   H
+ATOM      5  CB  GLU G   1      -0.343  -4.106   0.593  1.00  0.00      MR   C
+ATOM      6  HB1 GLU G   1      -0.799  -5.096   0.828  1.00  0.00      MR   H
+ATOM      7  HB2 GLU G   1      -0.762  -3.393   1.338  1.00  0.00      MR   H
+ATOM      8  CG  GLU G   1      -0.398  -3.683  -0.893  1.00  0.00      MR   C
+ATOM      9  HG1 GLU G   1      -0.125  -2.616  -0.983  1.00  0.00      MR   H
+ATOM     10  HG2 GLU G   1       0.298  -4.290  -1.505  1.00  0.00      MR   H
+ATOM     11  CD  GLU G   1      -1.755  -3.803  -1.461  1.00  0.00      MR   C
+ATOM     12  OE1 GLU G   1      -2.588  -2.920  -1.320  1.00  0.00      MR   O
+ATOM     13  OE2 GLU G   1      -1.971  -5.008  -1.949  1.00  0.00      MR   O
+ATOM     14  C   GLU G   1       1.889  -3.187   1.650  1.00  0.00      MR   C
+ATOM     15  O   GLU G   1       1.707  -1.966   1.546  1.00  0.00      MR   O
+END

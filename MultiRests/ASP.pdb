@@ -1,0 +1,14 @@
+REMARK original generated coordinate pdb file
+ATOM      1  N   ASP A   1      -1.895  -3.894  -0.686  1.00  0.00      MR    
+ATOM      2  HN  ASP A   1      -1.629  -4.218  -1.590  1.00  0.00      MR    
+ATOM      3  CA  ASP A   1      -0.799  -3.749   0.191  1.00  0.00      MR    
+ATOM      4  HA  ASP A   1      -1.009  -4.437   1.002  1.00  0.00      MR    
+ATOM      5  CB  ASP A   1       0.411  -4.146  -0.665  1.00  0.00      MR    
+ATOM      6  HB1 ASP A   1       0.108  -4.936  -1.382  1.00  0.00      MR    
+ATOM      7  HB2 ASP A   1       0.784  -3.276  -1.242  1.00  0.00      MR    
+ATOM      8  CG  ASP A   1       1.459  -4.672   0.264  1.00  0.00      MR    
+ATOM      9  OD1 ASP A   1       2.582  -4.160   0.501  1.00  0.00      MR    
+ATOM     10  OD2 ASP A   1       1.153  -5.799   0.758  1.00  0.00      MR    
+ATOM     11  C   ASP A   1      -0.599  -2.395   0.812  1.00  0.00      MR    
+ATOM     12  O   ASP A   1      -0.560  -2.312   2.036  1.00  0.00      MR    
+END

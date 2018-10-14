@@ -1,0 +1,12 @@
+REMARK original generated coordinate pdb file
+ATOM      1  N   CYSNC   1      -0.374  -1.028   1.356  1.00  0.00      MR   N
+ATOM      2  HN  CYSNC   1      -0.781  -0.253   0.876  1.00  0.00      MR   H
+ATOM      3  CA  CYSNC   1       0.285  -1.986   0.506  1.00  0.00      MR   C
+ATOM      4  HA  CYSNC   1       0.399  -2.867   1.126  1.00  0.00      MR   H
+ATOM      5  CB  CYSNC   1      -0.603  -2.322  -0.717  1.00  0.00      MR   C
+ATOM      6  HB1 CYSNC   1      -0.938  -1.356  -1.157  1.00  0.00      MR   H
+ATOM      7  HB2 CYSNC   1       0.008  -2.821  -1.501  1.00  0.00      MR   H
+ATOM      8  SG  CYSNC   1      -2.051  -3.300  -0.262  1.00  0.00      MR   S
+ATOM      9  C   CYSNC   1       1.635  -1.591   0.029  1.00  0.00      MR   C
+ATOM     10  O   CYSNC   1       2.416  -2.475  -0.257  1.00  0.00      MR   O
+END

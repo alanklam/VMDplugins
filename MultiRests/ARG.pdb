@@ -1,0 +1,26 @@
+REMARK original generated coordinate pdb file
+ATOM      1  N   ARG A   1       0.724  -2.315  -2.850  1.00  0.00      MR   N
+ATOM      2  HN  ARG A   1       0.415  -3.258  -2.971  1.00  0.00      MR   H
+ATOM      3  CA  ARG A   1      -0.383  -1.515  -2.302  1.00  0.00      MR   C
+ATOM      4  HA  ARG A   1      -1.290  -2.099  -2.401  1.00  0.00      MR   H
+ATOM      5  CB  ARG A   1      -0.264  -1.304  -0.780  1.00  0.00      MR   C
+ATOM      6  HB1 ARG A   1       0.799  -1.027  -0.582  1.00  0.00      MR   H
+ATOM      7  HB2 ARG A   1      -0.871  -0.422  -0.478  1.00  0.00      MR   H
+ATOM      8  CG  ARG A   1      -0.652  -2.640  -0.071  1.00  0.00      MR   C
+ATOM      9  HG1 ARG A   1      -1.660  -2.949  -0.425  1.00  0.00      MR   H
+ATOM     10  HG2 ARG A   1       0.043  -3.444  -0.408  1.00  0.00      MR   H
+ATOM     11  CD  ARG A   1      -0.594  -2.611   1.475  1.00  0.00      MR   C
+ATOM     12  HD1 ARG A   1      -1.444  -2.006   1.866  1.00  0.00      MR   H
+ATOM     13  HD2 ARG A   1      -0.657  -3.637   1.906  1.00  0.00      MR   H
+ATOM     14  NE  ARG A   1       0.677  -2.027   1.773  1.00  0.00      MR   N
+ATOM     15  HE  ARG A   1       1.329  -2.088   1.009  1.00  0.00      MR   H
+ATOM     16  CZ  ARG A   1       1.116  -1.442   2.850  1.00  0.00      MR   C
+ATOM     17  NH1 ARG A   1       0.457  -1.494   4.013  1.00  0.00      MR   N
+ATOM     18 HH11 ARG A   1       0.802  -1.018   4.810  1.00  0.00      MR   H
+ATOM     19 HH12 ARG A   1      -0.452  -1.916   3.990  1.00  0.00      MR   H
+ATOM     20  NH2 ARG A   1       2.337  -0.865   2.749  1.00  0.00      MR   N
+ATOM     21 HH21 ARG A   1       2.769  -0.479   3.552  1.00  0.00      MR   H
+ATOM     22 HH22 ARG A   1       2.846  -1.036   1.916  1.00  0.00      MR   H
+ATOM     23  C   ARG A   1      -0.612  -0.230  -3.064  1.00  0.00      MR   C
+ATOM     24  O   ARG A   1      -1.719   0.202  -3.274  1.00  0.00      MR   O
+END

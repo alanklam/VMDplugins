@@ -1,0 +1,37 @@
+Colvarstrajfrequency    500
+Colvarsrestartfrequency 500
+
+
+colvar {
+
+    name DEER-108-123
+    outputValue no
+    distancePairs {
+        forceNoPBC yes
+        group1 {
+            atomsFile             test-colvar.pdb
+            atomsCol              B
+            atomsColValue         108
+        }
+        group2 {
+            atomsFile             test-colvar.pdb
+            atomsCol              B
+            atomsColValue         123
+        }
+     }
+}
+
+
+histogramRestraint {
+
+    name    hr-108-123
+    colvars DEER-108-123
+    refHistogramFile ./his-108-123.dat
+    forceConstant    500.0
+    lowerBoundary    0.0
+    upperBoundary    60.0
+    width            1.0
+    gaussianWidth    1.1
+    outputEnergy     yes
+    writeHistogram   yes
+}

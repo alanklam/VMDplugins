@@ -1,0 +1,36 @@
+* Topology for deprotonated cystein (-1)
+*
+31  1
+
+! 
+
+DECL -CA  
+DECL -C  
+DECL -O  
+DECL +N  
+DECL +HN  
+DECL +CA  
+DEFA FIRS NTER LAST CTER   
+AUTO ANGLES DIHE   
+
+RESI CYSN        -1.00
+GROUP   
+ATOM N    NH1    -0.47  !     |       
+ATOM HN   H       0.31  !  HN-N       
+ATOM CA   CT1     0.07  !     |   HB1
+ATOM HA   HB      0.09  !     |   |  
+GROUP                   !  HA-CA--CB--SG (-1)
+ATOM CB   CT2    -0.31  !     |   |     
+ATOM HB1  HA      0.09  !     |   HB2   
+ATOM HB2  HA      0.09  !   O=C           
+ATOM SG   S      -0.87  !     |           
+GROUP   
+ATOM C    C       0.51
+ATOM O    O      -0.51
+BOND CB CA   SG CB   N  HN  N  CA   
+BOND C  CA   C  +N   CA HA  CB HB1   
+BOND CB HB2  SG HG1
+DOUBLE O  C   
+IMPR  N   -C  CA  HN   C  CA  +N  O   
+CMAP  -C  N   CA  C    N  CA  C   +N
+

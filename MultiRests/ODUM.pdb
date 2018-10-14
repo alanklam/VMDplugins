@@ -1,0 +1,13 @@
+CRYST1    0.000    0.000    0.000  90.00  90.00  90.00 P 1           1
+ATOM      1  ON  ODUMS   1      -4.492  -4.016  -3.601  1.00  0.00      SPLD O
+ATOM      2  N   ODUMS   1       1.004   0.574   1.883  1.00  0.00      SPLD  
+ATOM      3  HN  ODUMS   1       0.221   1.022   2.307  1.00  0.00      SPLD  
+ATOM      4  CA  ODUMS   1       0.974   0.134   0.534  1.00  0.00      SPLD  
+ATOM      5  HA  ODUMS   1       1.130  -0.930   0.631  1.00  0.00      SPLD  
+ATOM      6  CB  ODUMS   1      -0.501   0.401   0.120  1.00  0.00      SPLD  
+ATOM      7  HB1 ODUMS   1      -1.227  -0.073   0.814  1.00  0.00      SPLD  
+ATOM      8  HB2 ODUMS   1      -0.649   1.498   0.223  1.00  0.00      SPLD  
+ATOM      9  HB3 ODUMS   1      -0.697   0.199  -0.955  1.00  0.00      SPLD  
+ATOM     10  C   ODUMS   1       1.897   0.869  -0.468  1.00  0.00      SPLD  
+ATOM     11  O   ODUMS   1       2.338   0.321  -1.487  1.00  0.00      SPLD  
+END

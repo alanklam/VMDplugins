@@ -1,0 +1,70 @@
+* Parameter for the nitroxide dummy ON atom, representing the MTSSL spin-label
+*
+
+BONDS
+!
+!V(bond) = Kb(b - b0)**2
+!
+!Kb: kcal/mole/A**2
+!b0: A
+!
+!atom type Kb          b0
+!
+CT1 OND    0.5 7.9
+
+ANGLES
+!
+!V(angle) = Ktheta(Theta - Theta0)**2
+!
+!V(Urey-Bradley) = Kub(S - S0)**2
+!
+!Ktheta: kcal/mole/rad**2
+!Theta0: degrees
+!Kub: kcal/mole/A**2 (Urey-Bradley)
+!S0: A
+!
+!atom types     Ktheta    Theta0   Kub     S0
+!
+CT3 CT1 OND     1.0  46.0
+HB  CT1 OND     0.0  68.6
+C   CT1 OND     0.0 108.6
+NH1 CT1 OND     0.0 131.7
+
+IMPROPER
+!
+!V(improper) = Kpsi(psi - psi0)**2
+!
+!Kpsi: kcal/mole/rad**2
+!psi0: degrees
+!note that the second column of numbers (0) is ignored
+!
+!atom types           Kpsi                   psi0
+!
+OND CT3 CT1 NH1	1.9  43.0
+
+
+DIHEDRALS
+!
+!V(dihedral) = Kchi(1 + cos(n(chi) - delta))
+!
+!Kchi: kcal/mole
+!n: multiplicity
+!delta: degrees
+!
+!atom types             Kchi    n   delta
+!
+OND CT1 CT3 HA		0.0  1  83.1
+OND CT1 NH1 H  		0.0  1 -46.8
+OND CT1 C   O  		0.0  1 -43.4
+
+NONBONDED
+
+OND 0.0 -0.05 2.0
+
+NBFIX
+OND OT 0.0 0.0
+OND HT 0.0 0.0
+OND OND 0.0 0.0
+
+END
+

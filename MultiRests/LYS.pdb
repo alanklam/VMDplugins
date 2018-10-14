@@ -1,0 +1,24 @@
+REMARK original generated coordinate pdb file
+ATOM      1  N   LYS A   1      21.657 -13.457  -5.645  1.00  0.00      MR   N
+ATOM      2  HN  LYS A   1      21.968 -12.836  -4.927  1.00  0.00      MR   H
+ATOM      3  CA  LYS A   1      22.494 -14.627  -5.854  1.00  0.00      MR   C
+ATOM      4  HA  LYS A   1      23.235 -14.613  -5.064  1.00  0.00      MR   H
+ATOM      5  CB  LYS A   1      21.782 -15.922  -5.559  1.00  0.00      MR   C
+ATOM      6  HB1 LYS A   1      21.008 -16.058  -6.349  1.00  0.00      MR   H
+ATOM      7  HB2 LYS A   1      22.500 -16.765  -5.676  1.00  0.00      MR   H
+ATOM      8  CG  LYS A   1      21.150 -15.871  -4.181  1.00  0.00      MR   C
+ATOM      9  HG1 LYS A   1      21.868 -15.406  -3.468  1.00  0.00      MR   H
+ATOM     10  HG2 LYS A   1      20.249 -15.216  -4.219  1.00  0.00      MR   H
+ATOM     11  CD  LYS A   1      20.833 -17.335  -3.816  1.00  0.00      MR   C
+ATOM     12  HD1 LYS A   1      20.117 -17.738  -4.568  1.00  0.00      MR   H
+ATOM     13  HD2 LYS A   1      21.774 -17.926  -3.902  1.00  0.00      MR   H
+ATOM     14  CE  LYS A   1      20.247 -17.605  -2.420  1.00  0.00      MR   C
+ATOM     15  HE1 LYS A   1      19.286 -17.059  -2.288  1.00  0.00      MR   H
+ATOM     16  HE2 LYS A   1      20.056 -18.692  -2.280  1.00  0.00      MR   H
+ATOM     17  NZ  LYS A   1      21.133 -17.181  -1.339  1.00  0.00      MR   N
+ATOM     18  HZ1 LYS A   1      20.693 -17.383  -0.418  1.00  0.00      MR   H
+ATOM     19  HZ2 LYS A   1      22.036 -17.692  -1.410  1.00  0.00      MR   H
+ATOM     20  HZ3 LYS A   1      21.311 -16.159  -1.419  1.00  0.00      MR   H
+ATOM     21  C   LYS A   1      23.248 -14.601  -7.188  1.00  0.00      MR   C
+ATOM     22  O   LYS A   1      23.475 -15.616  -7.830  1.00  0.00      MR   O
+END

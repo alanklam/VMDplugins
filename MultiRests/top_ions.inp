@@ -1,0 +1,78 @@
+* Topology for ions
+*
+36  1
+
+MASS 301  LIT  	6.94100 LI ! Lithium ion
+MASS 302  SOD  22.98977 NA ! Sodium Ion
+MASS 303  MG   24.30500 MG ! Magnesium Ion
+MASS 304  POT  39.09830 K  ! Potassium Ion
+MASS 305  CAL  40.08000 CA ! Calcium Ion
+MASS 306  RUB  85.46780 RB ! Rubidium Ion
+MASS 307  CES 132.90545 CS ! Cesium Ion
+MASS 308  BAR 137.32700 BA ! Barium Ion
+MASS 309  ZN   65.37000 ZN ! zinc (II) cation
+MASS 310  CAD 112.41100 CD ! cadmium (II) cation
+MASS 311  CLA  35.45000 CL ! Chloride Ion
+
+default first none last none
+
+
+! Ion parameters from Benoit Roux and Coworkers
+! As of 8/10 new NBFIX terms required
+!
+RESI LIT       1.00 ! Lithium Ion
+GROUP
+ATOM LIT  LIT  1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI SOD       1.00 ! Sodium Ion
+GROUP
+ATOM SOD  SOD  1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI MG        2.00 ! Magnesium Ion
+GROUP
+ATOM MG   MG   2.00
+PATCHING FIRST NONE LAST NONE
+
+RESI POT       1.00 ! Potassium Ion
+GROUP
+ATOM POT   POT 1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CAL       2.00 ! Calcium Ion
+GROUP
+ATOM CAL  CAL  2.00
+PATCHING FIRST NONE LAST NONE
+
+RESI RUB       1.00 ! Rubidium Ion
+GROUP
+ATOM RUB  RUB  1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CES       1.00 ! Cesium Ion
+GROUP
+ATOM CES  CES  1.00
+PATCHING FIRST NONE LAST NONE
+
+RESI BAR       2.00 ! Barium Ion
+GROUP
+ATOM BAR  BAR  2.00
+PATCHING FIRST NONE LAST NONE
+
+RESI ZN2       2.00 ! Zinc (II) cation, Roland Stote
+GROUP
+ATOM ZN   ZN   2.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CD2       2.00 ! Cadmium (II) cation
+GROUP
+ATOM CD   CAD  2.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CLA      -1.00 ! Chloride Ion
+GROUP
+ATOM CLA  CLA -1.00
+PATCHING FIRST NONE LAST NONE
+
+END
