@@ -235,7 +235,7 @@ proc clusteringtool::cluster {} {
   button $w.result.options.1.update -text "Update Views" -command [namespace code UpdateSel]
   pack $w.result.options.1.update -side left
 
-  checkbutton $w.result.options.1.keep -text "Keep non-cluster representations" -variable clusteringtool::keep_rep -command [namespace code UpdateLevels]  
+  checkbutton $w.result.options.1.join -text "Keep non-cluster representations" -variable clusteringtool::keep_rep -command [namespace code UpdateLevels]  
   pack $w.result.options.1.join -side right
 
   frame $w.result.options.2
@@ -258,7 +258,7 @@ proc clusteringtool::cluster {} {
   frame $w.result.options.3
   pack $w.result.options.3 -side top -fill x
 
-  checkbutton $w.result.options.3.join -text "Join 1 member clusters" -variable clusteringtool::join_1members -command [namespace code UpdateLevels]
+  checkbutton $w.result.options.3.keep -text "Join 1 member clusters" -variable clusteringtool::join_1members -command [namespace code UpdateLevels]
   pack $w.result.options.3.keep -side right
 
   # Data
